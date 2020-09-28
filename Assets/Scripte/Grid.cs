@@ -30,10 +30,15 @@ public class Grid
         }
     }
 
-    private Vector3 GetWorldPosition(int x, int y)
+    public Vector3 GetWorldPosition(int x, int y)
     {
-        return  new Vector3(x,0,y*_cellSize);
+        return  new Vector3(x,0,y*_cellSize)+_worldPosition;
     }
+    public Vector3 GetWorldPositionCenter(int x, int y)
+    {
+        return  new Vector3(x,0,y*_cellSize)+_worldPosition+new Vector3(_cellSize/2,0,_cellSize/2);
+    }
+    
 
     private void GetXY(Vector3 worldPosition, out int x, out int y)
     {
@@ -45,6 +50,39 @@ public class Grid
     {
         GetXY(worldpos, out int x, out int y);
         return _gridArray[x, y];
+    }
+
+    public GameObject[,] ObjectsOnGrid()
+    {
+        return _gridArray;
+    }
+
+    public GameObject GetObjectOnGrid(int x, int y)
+    {
+        return _gridArray[x, y];
+    }
+
+    public void SetGameObjectOnGrid(GameObject gameObject,int x, int y)
+    {
+        _gridArray[x, y] = gameObject;
+    }
+
+    public List<Vector2> CheckFreeCells()
+    {
+        List<Vector2> freeCells = new List<Vector2>();
+        for (int x = 0; x < _gridArray.GetLength(0); x++)
+        {
+            for (int y = 0; y < _gridArray.GetLength(1); y++)
+            {
+                if (_gridArray[x, y] == null)
+                {
+                    freeCells.Add(new Vector2(x,y));
+                }
+            }
+        }
+        Debug.Log(freeCells);
+
+        return freeCells;
     }
    
 }
