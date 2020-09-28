@@ -11,6 +11,7 @@ public class UniteMove : MonoBehaviour
     public SOEnemie EnemieInfo;
     public int Type;
     public string Name;
+    public int AnimOri;
 
     private int _hp;
 
@@ -56,7 +57,13 @@ public class UniteMove : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        if (_agent.velocity.x < _agent.velocity.y)
+        {
+            AnimOri = 1;
+        }else if (_agent.velocity.x < _agent.velocity.y)
+    }
 
     public void TakeDamage(int damage, int spType, int spDamage)
     {
