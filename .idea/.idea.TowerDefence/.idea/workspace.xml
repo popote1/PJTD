@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripte/GridTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripte/SOTourel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripte/SOEnemie.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A9810827-DCE3-444A-8E5C-4E9F3F5E0828/78/253875e3/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
@@ -26,6 +27,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripte/TourelleHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripte/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripte/GameSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripte/GridTester.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripte/Grid.cs" />
       </list>
     </option>
   </component>
@@ -70,6 +73,7 @@
       <updated>1601019539908</updated>
       <workItem from="1601019589171" duration="468000" />
       <workItem from="1601020582184" duration="21206000" />
+      <workItem from="1601284562918" duration="7302000" />
     </task>
     <servers />
   </component>

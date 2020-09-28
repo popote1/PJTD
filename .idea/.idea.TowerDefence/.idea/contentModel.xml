@@ -11,6 +11,8 @@
           <e p="GameManager.cs" t="Include" />
           <e p="GameSetter.cs" t="Include" />
           <e p="Goal.cs" t="Include" />
+          <e p="Grid.cs" t="Include" />
+          <e p="GridTester.cs" t="Include" />
           <e p="SOEnemie.cs" t="Include" />
           <e p="SOTourel.cs" t="Include" />
           <e p="TourelleHolder.cs" t="Include" />
