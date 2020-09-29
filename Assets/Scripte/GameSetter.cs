@@ -38,7 +38,7 @@ public class GameSetter : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.SetUI(Money, HP);
+       GameManager.SetUI(Money, HP);
     }
 
     private void Start()

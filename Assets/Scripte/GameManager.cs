@@ -8,29 +8,31 @@ using UnityEngine.Assertions.Comparers;
 public static class GameManager
 {
     public static int NombrePasser=0;
+    private static int _hpvalue;
     public static int HP
     {
-        get => HP;
+        get => _hpvalue;
         set
         {
             if (value > 100)
             {
-                HP = 100;
+                _hpvalue = 100;
             }else if (value < 0)
             {
-                HP = 0;
+                _hpvalue = 0;
                 GameOvers();
             }
             ChangeHP();
         }
     }
 
+    private static int _moneyValue;
     public static int Money
     {
-        get => Money;
+        get => _moneyValue;
         set
         {
-            Money = value;
+           _moneyValue = value;
             ChangeMoney();
         }
     }
