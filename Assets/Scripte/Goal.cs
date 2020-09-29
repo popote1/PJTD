@@ -7,11 +7,10 @@ public class Goal : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        GameManager.EnemieToGoal(other.GetComponent<UniteMove>().EnemieInfo.Damage);
         if (other.transform.CompareTag("Enemi"))
         {
             Destroy(other.gameObject);
         }
-        GameManager.EnemieToGoal();
-        
     }
 }

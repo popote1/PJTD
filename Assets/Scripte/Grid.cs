@@ -38,12 +38,19 @@ public class Grid
     {
         return  new Vector3(x,0,y*_cellSize)+_worldPosition+new Vector3(_cellSize/2,0,_cellSize/2);
     }
+    public Vector3 GetWorldPositionCenter(Vector3 pos)
+    {
+        GetXY(pos , out int x , out int y);
+        return  new Vector3(x,0,y*_cellSize)+_worldPosition+new Vector3(_cellSize/2,0,_cellSize/2);
+    }
     
 
     private void GetXY(Vector3 worldPosition, out int x, out int y)
     {
-        x=Mathf.FloorToInt(_worldPosition.x / _cellSize);
-        y=Mathf.FloorToInt(_worldPosition.z / _cellSize);
+        x=Mathf.FloorToInt((worldPosition-_worldPosition).x / _cellSize);
+        y=Mathf.FloorToInt((worldPosition-_worldPosition).z / _cellSize);
+        
+       // Debug.Log("X= "+x +"         Y="+y);
     }
 
     public GameObject GetGameObjectForWorldPosition(Vector3 worldpos)
@@ -67,6 +74,12 @@ public class Grid
         _gridArray[x, y] = gameObject;
     }
 
+    public void SetGameObjectOnGrid(GameObject obj, Vector3 worldPosition)
+    {
+        GetXY(worldPosition, out int x, out int y);
+        SetGameObjectOnGrid(obj, x, y);
+    }
+
     public List<Vector2> CheckFreeCells()
     {
         List<Vector2> freeCells = new List<Vector2>();
@@ -82,6 +95,19 @@ public class Grid
         }
 
         return freeCells;
+    }
+
+    public bool CheckIfCellIsFree(Vector3 pos)
+    {
+        GetXY(pos, out int x , out int y);
+        if (_gridArray[x, y] == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
    
 }
