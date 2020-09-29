@@ -80,7 +80,6 @@ public class Grid
                 }
             }
         }
-        Debug.Log(freeCells);
 
         return freeCells;
     }

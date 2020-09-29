@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using TMPro.EditorUtilities;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,12 +23,15 @@ public class GameSetter : MonoBehaviour
     public  int NombreCollone;
     private Grid _buildingGrid;
 
-    [Header("Building")] 
+    [Header("Building")]
+    public GameObject Tourelle1;
     public GameObject CaseVert;
     public GameObject ObjetVide;
     public List<Vector2> CaseNonConstructible;
     private List<GameObject> _caseVerts = new List<GameObject>();
     private List<Vector2> _freespots;
+
+    private int _state;
 
     private void Awake()
     {
@@ -41,6 +45,15 @@ public class GameSetter : MonoBehaviour
         ChangeMoney(StartMoney);
         ChangeHP(StartHP);
         SetNonConstuctibleCells();
+        _state = 0;
+    }
+
+    private void Update()
+    {
+        if (Input.GetButton("Fire1") && _state == 1)
+        {
+            SetBuild();
+        }
     }
 
 
@@ -65,6 +78,8 @@ public class GameSetter : MonoBehaviour
            _caseVerts.Add(obj);
 
        }
+
+       _state = 1;
     }
 
     public void UIResteConstructionList()
@@ -83,4 +98,8 @@ public class GameSetter : MonoBehaviour
             _buildingGrid.SetGameObjectOnGrid(Instantiate(ObjetVide, Vector3.zero, Quaternion.identity), (int)pos.x,(int) pos. y);
         }
     }
+
+    private void SetBuild()
+    {
+        }
 }
