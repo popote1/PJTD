@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aaf7ec4294f18f745a05a2427568d998, type: 2}
+  - {fileID: 2100000, guid: 7205d1aec55c77a4996d44a40f56e81f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,7 +91,7 @@ BoxCollider:
   m_GameObject: {fileID: 8400706464468592459}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -108,9 +108,8 @@ GameObject:
   - component: {fileID: 8400706465029505008}
   - component: {fileID: 8400706465029505015}
   - component: {fileID: 8400706465029505011}
-  - component: {fileID: 2243614532571299606}
   m_Layer: 0
-  m_Name: Tourell 1
+  m_Name: HeavyTourette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,14 +122,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8400706465029505014}
-  m_LocalRotation: {x: -0.18199682, y: -0, z: -0, w: 0.98329914}
-  m_LocalPosition: {x: -1.8, y: 1.9702196, z: 1.6790285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8, y: 0.602, z: 1.67}
   m_LocalScale: {x: 0.5549244, y: 0.5549244, z: 0.5549244}
   m_Children:
   - {fileID: 8400706464468592468}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 359, y: 346, z: 354}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8400706465029505009
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -158,7 +157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aaf7ec4294f18f745a05a2427568d998, type: 2}
+  - {fileID: 2100000, guid: c0fb47a9c6963fb4a9a67fa826e4877e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -189,7 +188,7 @@ BoxCollider:
   m_GameObject: {fileID: 8400706465029505014}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -208,24 +207,5 @@ MonoBehaviour:
   LayerMask:
     serializedVersion: 2
     m_Bits: 256
-  TourelInfo: {fileID: 11400000, guid: 87b4f4b56151ebe41bef43fd26745390, type: 2}
+  TourelInfo: {fileID: 11400000, guid: a20d3c57ae7f9c243a13846dba17d3a0, type: 2}
   Name: 
---- !u!320 &2243614532571299606
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8400706465029505014}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 080cf79a7bf977b4aba5cd18f6c803b4, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 8857039686901921858, guid: 080cf79a7bf977b4aba5cd18f6c803b4, type: 2}
-    value: {fileID: 0}
-  m_ExposedReferences:
-    m_References: []

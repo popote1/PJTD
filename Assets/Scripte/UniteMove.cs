@@ -80,5 +80,11 @@ public class UniteMove : MonoBehaviour
         GameManager.EnnemiKill(EnemieInfo.MoneyForKill);
         Destroy(gameObject);
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Enemis.Remove(gameObject);
+        GameManager.CheckIfWaveEnded();
+    }
 }
 

@@ -7,6 +7,7 @@ public class SOTourel : ScriptableObject
    public string Name;
    public float Range;
    public float FireRate;
+   public float Cost;
    public int Damage;
    public enum _specialType {Leger , normal , Blinder}
 
