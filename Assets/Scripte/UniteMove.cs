@@ -77,6 +77,7 @@ public class UniteMove : MonoBehaviour
 
     private void Die()
     {
+        GameManager.EnnemiKill(EnemieInfo.MoneyForKill);
         Destroy(gameObject);
     }
 }

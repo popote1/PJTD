@@ -9,7 +9,7 @@ public class SOEnemie : ScriptableObject
     public string Name;
     public int HP;
     public int Damage;
-    
+    public int MoneyForKill;
     public enum _armor { leger,normal, Blinder }
     public _armor Armor;
     public float MoveSpeed;

@@ -13,20 +13,23 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripte/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripte/TourelleHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripte/GridTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripte/GameSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripte/SOEnemie.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripte/Goal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripte/Grid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripte/UniteMove.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripte/Grid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripte/SOEnemie.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripte/Goal.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripte/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripte/GameSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripte/SOEnemie.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripte/UniteMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripte/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -86,6 +89,7 @@
       <workItem from="1601379953038" duration="661000" />
       <workItem from="1601395650082" duration="2767000" />
       <workItem from="1601406359178" duration="8037000" />
+      <workItem from="1601446341421" duration="1222000" />
     </task>
     <servers />
   </component>

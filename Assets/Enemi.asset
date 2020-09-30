@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: zerg1
   HP: 5
+  Damage: 20
+  MoneyForKill: 50
   Armor: 0
   MoveSpeed: 2
   AttckType: 0

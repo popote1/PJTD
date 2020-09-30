@@ -22,6 +22,10 @@ public static class GameManager
                 _hpvalue = 0;
                 GameOvers();
             }
+            else
+            {
+                _hpvalue = value;}
+            
             ChangeHP();
         }
     }
@@ -40,7 +44,10 @@ public static class GameManager
     private static TMP_Text _money;
     private static  Slider _hp;
     
-
+    public static void EnnemiKill(int moneyOfKill)
+    {
+        Money += moneyOfKill;
+    }
     public static void EnemieToGoal(int damage)
     {
         NombrePasser++;
@@ -56,6 +63,8 @@ public static class GameManager
     public static void ChangeHP()
     {
         _hp.value =Mathf.Lerp(_hp.value, HP / 100,0.3f);
+        //_hp.value =((float)HP)/100;
+        
     }
 
     public static  void ChangeMoney()
@@ -67,4 +76,6 @@ public static class GameManager
     {
         Debug.Log("GameOver");
     }
+
+    
 }
