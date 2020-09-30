@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 8400706465029505009}
   - component: {fileID: 8400706465029505008}
   - component: {fileID: 8400706465029505015}
-  - component: {fileID: 8400706465029505011}
+  - component: {fileID: 1049866845804514690}
   m_Layer: 0
   m_Name: LegerTourette
   m_TagString: Untagged
@@ -192,7 +192,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8400706465029505011
+--- !u!114 &1049866845804514690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8400706465029505014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26f70dfd36502b74e803f9e98c8b9062, type: 3}
+  m_Script: {fileID: 11500000, guid: 01873eaaafeee474c920b616b88542f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LayerMask:

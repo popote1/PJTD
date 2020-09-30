@@ -31,7 +31,11 @@ public class GameSetter : MonoBehaviour
     public GameObject LightTourelle;
     public GameObject MediumTourelle;
     public GameObject HeavyTourelle;
+    public GameObject LightSmashTourel;
+    public GameObject MediumSmashToure;
+    public GameObject HeavySmashTourel;
     public GameObject Tourelle1Holo;
+    public GameObject SmashTourelHolo;
     public GameObject CaseVert;
     public GameObject ObjetVide;
     public List<Vector2> CaseNonConstructible;
@@ -126,6 +130,43 @@ public class GameSetter : MonoBehaviour
             Debug.Log("Pas assez d'argent");
         }
     }
+
+    public void UIBuildLightSmachTourel()
+    {
+        if (GameManager.Money -LightSmashTourel.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
+        {
+            _objetChoise = 4;
+            UIContructionListe();
+        }
+        else
+        {
+            Debug.Log("Pas assez d'argent");
+        }
+    }
+    public void UIBuildMediumSmachTourel()
+    {
+        if (GameManager.Money -MediumSmashToure.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
+        {
+            _objetChoise = 5;
+            UIContructionListe();
+        }
+        else
+        {
+            Debug.Log("Pas assez d'argent");
+        }
+    }
+    public void UIBuildHeavySmachTourel()
+    {
+        if (GameManager.Money -HeavySmashTourel.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
+        {
+            _objetChoise = 6;
+            UIContructionListe();
+        }
+        else
+        {
+            Debug.Log("Pas assez d'argent");
+        }
+    }
     
     private void UIContructionListe()
     {
@@ -140,7 +181,14 @@ public class GameSetter : MonoBehaviour
        }
 
        _state = 1;
-       _objectInHand = Instantiate(Tourelle1Holo, Vector3.zero, Quaternion.identity);
+       if (_objetChoise < 4)
+       {
+           _objectInHand = Instantiate(Tourelle1Holo, Vector3.zero, Quaternion.identity);
+       }
+       else
+       {
+           _objectInHand = Instantiate(SmashTourelHolo, Vector3.zero, Quaternion.identity);
+       }
     }
 
     public void UIResteConstructionList()
@@ -172,6 +220,9 @@ public class GameSetter : MonoBehaviour
         {case 1 : nextbuild = LightTourelle; break;
         case 2: nextbuild = MediumTourelle; break;
         case 3 : nextbuild = HeavyTourelle; break;
+        case 4: nextbuild = LightSmashTourel; break;
+        case 5 : nextbuild = MediumSmashToure; break;
+        case 6 : nextbuild = HeavySmashTourel; break;
         }
         GameObject tourelle =Instantiate(nextbuild, _buildingGrid.GetWorldPositionCenter(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 13f))), Quaternion.identity);
         _buildingGrid.SetGameObjectOnGrid(tourelle ,Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 13f)) );

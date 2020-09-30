@@ -11,14 +11,14 @@ public class TourelleHolder : MonoBehaviour
     public LayerMask LayerMask;
     public SOTourel TourelInfo;
     [HideInInspector] public string Name;
-    private float _range;
-    private float _fireRate;
-    private int _damage;
-    private int _specialType;
-    private int _spacialDamage;
-    private GameObject _target;
+    protected float _range;
+    protected float _fireRate;
+    protected int _damage;
+    protected int _specialType;
+    protected int _spacialDamage;
+    protected GameObject _target;
     //public Collider[] NearColliders => Physics.OverlapSphere(transform.position, _range);
-    private Collider[] _cachedNearColliders = new Collider[100];
+    protected Collider[] _cachedNearColliders = new Collider[100];
     public Collider[] NonAllocNearColliders
     {
         get
@@ -30,9 +30,9 @@ public class TourelleHolder : MonoBehaviour
         
     }
 
-    private float _shootTimer;
+    protected float _shootTimer = 0;
 
-    private void Start()
+    protected void Start()
     {
         _range = TourelInfo.Range;
         _fireRate = TourelInfo.FireRate;
@@ -52,56 +52,12 @@ public class TourelleHolder : MonoBehaviour
         _spacialDamage = TourelInfo.SpecialDamage;
     }
 
-    private void Update()
-    {
-        if (!_target)
-        {
-            float smallerDistance = Mathf.Infinity;
+    
 
-            
-            
-                foreach (Collider nearCollider in NonAllocNearColliders)
-                {
-                    if (nearCollider == null) break;
-                    float distance = Vector3.Distance(transform.position, nearCollider.transform.position);
-                    if (distance < smallerDistance)
-                    {
-                        smallerDistance = distance;
-                        _target = nearCollider.gameObject;
-                        for (int i = 0; _cachedNearColliders.Length > i; i++)
-                        {
-                            _cachedNearColliders[i] = null;
-                        }
-
-                    }
-                
-            }
-        }
-
-        if (_target == null) return;
-            
-            
-            transform.forward = _target.transform.position-transform.position;
-            //Debug.DrawLine(transform.position,_target.transform.position,Color.green);
-            if (Vector3.Magnitude(transform.position - _target.transform.position) > _range)
-            {
-                _target = null;
-            }
-
-            _shootTimer += Time.deltaTime;
-            if(_shootTimer>=_fireRate)
-            {
-                _target.GetComponent<UniteMove>().TakeDamage(_damage,_specialType,_spacialDamage);
-                _shootTimer = 0;
-                Debug.DrawLine(transform.position,_target.transform.position,Color.red,0.25f);
-            }
-
-    }
-
-    private void OnDrawGizmos()
+   /* protected void OnDrawGizmos()
     {
         Gizmos.color =Color.red;
         Gizmos.DrawWireSphere(transform.position,_range);
         
-    }
+    }*/
 }
