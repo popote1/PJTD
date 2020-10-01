@@ -35,10 +35,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripte/UniteMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripte/Goal.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripte/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripte/RayTourel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripte/GameSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripte/TourelleHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripte/RayTourel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripte/SmashTourel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripte/GameSetter.cs" />
       </list>
     </option>
   </component>
@@ -101,6 +101,7 @@
       <workItem from="1601446341421" duration="1222000" />
       <workItem from="1601450191153" duration="8806000" />
       <workItem from="1601486458939" duration="10866000" />
+      <workItem from="1601542244707" duration="5299000" />
     </task>
     <servers />
   </component>

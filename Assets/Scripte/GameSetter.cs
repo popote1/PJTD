@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿
 using System.Collections.Generic;
 using TMPro;
-using TMPro.EditorUtilities;
-using UnityEditor;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +48,13 @@ public class GameSetter : MonoBehaviour
     public GameObject Spawner1;
     public GameObject Spawner2;
 
+    [Header("Sound Sisteme")] 
+    public AudioClip StartWave;
+    public AudioClip EndWave;
+    public AudioClip Clip;
+    public AudioClip MouseOvert;
+    public AudioClip Error;
+    private AudioSource _audioSource;
     private int _state;
 
     private void Awake()
@@ -65,6 +70,8 @@ public class GameSetter : MonoBehaviour
         _buildingGrid = new Grid(NombreCollone,NombreLigne,CellSize,GridOrigine.position);
         SetNonConstuctibleCells();
         _state = 0;
+        _audioSource = GetComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -96,6 +103,12 @@ public class GameSetter : MonoBehaviour
 
     public void UIBuildLightTorrelle()
     {
+        if (_state == 1)
+        {
+            _state = 0;
+            UIResteConstructionList();
+            _state = 1;
+        }
         if (GameManager.Money - LightTourelle.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
         {
             _objetChoise = 1;
@@ -103,11 +116,18 @@ public class GameSetter : MonoBehaviour
         }
         else
         {
+            PlayError();
             Debug.Log("Pas assez d'argent");
         }
     }
     public void UIBuildMediumTorrelle()
     {
+        if (_state == 1)
+        {
+            _state = 0;
+            UIResteConstructionList();
+            _state = 1;
+        }
         if (GameManager.Money - MediumTourelle.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
         {
             _objetChoise = 2;
@@ -115,11 +135,18 @@ public class GameSetter : MonoBehaviour
         }
         else
         {
+            PlayError();
             Debug.Log("Pas assez d'argent");
         }
     }
     public void UIBuildHeavyTorrelle()
     {
+        if (_state == 1)
+        {
+            _state = 0;
+            UIResteConstructionList();
+            _state = 1;
+        }
         if (GameManager.Money -HeavyTourelle.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
         {
             _objetChoise = 3;
@@ -127,12 +154,19 @@ public class GameSetter : MonoBehaviour
         }
         else
         {
+            PlayError();
             Debug.Log("Pas assez d'argent");
         }
     }
 
     public void UIBuildLightSmachTourel()
     {
+        if (_state == 1)
+        {
+            _state = 0;
+            UIResteConstructionList();
+            _state = 1;
+        }
         if (GameManager.Money -LightSmashTourel.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
         {
             _objetChoise = 4;
@@ -140,11 +174,18 @@ public class GameSetter : MonoBehaviour
         }
         else
         {
+            PlayError();
             Debug.Log("Pas assez d'argent");
         }
     }
     public void UIBuildMediumSmachTourel()
     {
+        if (_state == 1)
+        {
+            _state = 0;
+            UIResteConstructionList();
+            _state = 1;
+        }
         if (GameManager.Money -MediumSmashToure.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
         {
             _objetChoise = 5;
@@ -152,11 +193,13 @@ public class GameSetter : MonoBehaviour
         }
         else
         {
+            PlayError();
             Debug.Log("Pas assez d'argent");
         }
     }
     public void UIBuildHeavySmachTourel()
     {
+        
         if (GameManager.Money -HeavySmashTourel.GetComponent<TourelleHolder>().TourelInfo.Cost >= 0)
         {
             _objetChoise = 6;
@@ -164,12 +207,14 @@ public class GameSetter : MonoBehaviour
         }
         else
         {
+            PlayError();
             Debug.Log("Pas assez d'argent");
         }
     }
     
     private void UIContructionListe()
     {
+        PlayOnClick();
        List<Vector2>freeCells = _buildingGrid.CheckFreeCells();
        foreach (Vector2 pos in freeCells)
        {
@@ -201,7 +246,7 @@ public class GameSetter : MonoBehaviour
     }
 
     public void UIStartSpawn()
-    {
+    {PlayStartWave();
         GameManager.StartSpawn();
     }
 
@@ -233,5 +278,26 @@ public class GameSetter : MonoBehaviour
         UIResteConstructionList();
     }
 
-   
+    private void PlayOnClick()
+    {
+        _audioSource.clip = Clip;
+        _audioSource.Play();
+    }
+
+    public void PlayOnMouseOver(){
+        _audioSource.clip = MouseOvert;
+        _audioSource.Play();
+    }
+    private void PlayError(){
+        _audioSource.clip = Error;
+        _audioSource.Play();
+    }
+    private void PlayStartWave(){
+        _audioSource.clip = StartWave;
+        _audioSource.Play();
+    }
+    
+
+
+
 }

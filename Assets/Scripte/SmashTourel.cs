@@ -7,6 +7,7 @@ using UnityEngine;
 public class SmashTourel : TourelleHolder
 {
     public GameObject CentreAxe;
+    public GameObject EXPLOSION;
     private List<Collider> _enemiInZone;
     // Start is called before the first frame update
   
@@ -31,6 +32,11 @@ public class SmashTourel : TourelleHolder
                         enemiCol.GetComponent<UniteMove>().HP -= _damage;
                     }
                 }
+
+                GameObject explo = Instantiate(EXPLOSION, transform.position, Quaternion.identity);
+                Destroy(explo,0.5f);
+                _audioSource.clip = FireSound;
+                _audioSource.Play();
 
                 _shootTimer = 0;
             }

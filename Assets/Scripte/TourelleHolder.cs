@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using TMPro.EditorUtilities;
-using UnityEditor;
+﻿
 using UnityEngine;
 
 public class TourelleHolder : MonoBehaviour
@@ -17,6 +12,9 @@ public class TourelleHolder : MonoBehaviour
     protected int _specialType;
     protected int _spacialDamage;
     protected GameObject _target;
+    public AudioClip FireSound;
+
+    protected AudioSource _audioSource;
     //public Collider[] NearColliders => Physics.OverlapSphere(transform.position, _range);
     protected Collider[] _cachedNearColliders = new Collider[100];
     public Collider[] NonAllocNearColliders
@@ -50,6 +48,7 @@ public class TourelleHolder : MonoBehaviour
         }
 
         _spacialDamage = TourelInfo.SpecialDamage;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     
